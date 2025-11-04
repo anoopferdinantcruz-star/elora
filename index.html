@@ -1,235 +1,147 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Elora Jewelry - Galaxy Collection</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
-
-  /* Galaxy background */
-  body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: #fff;
-    background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
-    background-image: url('https://images.unsplash.com/photo-1462331940025-496dfbfc7564?ixlib=rb-4.0.3&auto=format&fit=crop&w=1500&q=80');
-    background-size: cover;
-    background-position: center;
-  }
-
-  header {
-    text-align: center;
-    padding: 2rem 1rem;
-    background: rgba(0, 0, 30, 0.7);
-    box-shadow: 0 2px 10px rgba(255, 255, 255, 0.2);
-  }
-
-  header h1 {
-    font-size: 3rem;
-    letter-spacing: 0.1em;
-    color: #f0dbff;
-    margin-bottom: 0.2rem;
-    text-shadow: 0 0 15px #9b59b6;
-  }
-
-  header p {
-    font-size: 1.25rem;
-    color: #e0c3fc;
-    margin: 0;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 2rem auto;
-    padding: 0 1rem;
-  }
-
-  section.products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-  }
-
-  .product-card {
-    background: rgba(25, 8, 51, 0.85);
-    border-radius: 15px;
-    box-shadow: 0 0 15px #9b59b6;
-    overflow: hidden;
-    transition: transform 0.3s ease;
-  }
-
-  .product-card:hover {
-    transform: scale(1.05);
-  }
-
-  .product-card img {
-    width: 100%;
-    display: block;
-    border-bottom: 2px solid #9b59b6;
-    object-fit: cover;
-    height: 320px;
-  }
-
-  .product-info {
-    padding: 1rem;
-  }
-
-  .product-info h3 {
-    margin: 0 0 0.5rem 0;
-    color: #f7d1ff;
-  }
-
-  .product-info p {
-    font-size: 0.9rem;
-    color: #d3b7ff;
-  }
-
-  .order-btn {
-    display: inline-block;
-    margin-top: 1rem;
-    background: #9b59b6;
-    color: white;
-    padding: 0.5rem 1.2rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    box-shadow: 0 0 10px #dca7ff;
-    transition: background 0.3s ease;
-  }
-
-  .order-btn:hover {
-    background: #7a3a9a;
-  }
-
-  footer {
-    text-align: center;
-    padding: 1.5rem 1rem;
-    font-size: 0.9rem;
-    color: #b8a0d5;
-  }
-
-  /* Responsive */
-  @media (max-width: 600px) {
-    header h1 {
-      font-size: 2.2rem;
-    }
-    .order-btn {
-      font-size: 0.9rem;
-    }
-    .product-card img {
-      height: 260px;
-    }
-  }
-</style>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Elora By Athilu — Anti‑tarnish • Traditional • Lightweight • Fancy</title>
+  <meta name="description" content="Elora By Athilu — anti‑tarnish, traditional, lightweight jewelry. Order via WhatsApp or Instagram." />
+  <link rel="icon" href="/favicon.png" type="image/png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root { --accent: #D4AF37; --bg: #0b0b0b; --text: #f4f4f5; }
+    html, body { background: var(--bg); color: var(--text); }
+    .font-playfair { font-family: 'Playfair Display', serif; }
+    .font-poppins { font-family: 'Poppins', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    .btn-gold { background-color: var(--accent); color: #000; border-radius: 9999px; padding: 0.65rem 1.25rem; font-weight: 600; display:inline-flex; align-items:center; gap:.5rem; }
+    .btn-outline-gold { border:1px solid var(--accent); color: var(--accent); border-radius: 9999px; padding: 0.65rem 1.25rem; font-weight:600; display:inline-flex; align-items:center; gap:.5rem; background: transparent; }
+    .card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); border-radius: 1rem; overflow: hidden; }
+    .grain { background-image: radial-gradient(1px 1px at 25px 25px, rgba(255,255,255,.8) 1px, transparent 0), radial-gradient(1px 1px at 75px 75px, rgba(255,255,255,.4) 1px, transparent 0); background-size:100px 100px; opacity:.08;}
+    .sticky-safe { position: sticky; top: 0; z-index: 30; backdrop-filter: saturate(180%) blur(8px); }
+  </style>
 </head>
-<body>
+<body class="font-poppins">
+  <div class="grain fixed inset-0 pointer-events-none"></div>
+  <header class="w-full border-b border-white/10 bg-black/30 sticky-safe">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <div class="font-playfair text-2xl tracking-wide" style="color: var(--accent)">Elora By Athilu</div>
+      <nav class="hidden md:flex items-center gap-6 text-sm text-white/80">
+        <a href="#shop" class="hover:text-white">Shop</a>
+        <a href="#about" class="hover:text-white">About</a>
+        <a href="#reviews" class="hover:text-white">Reviews</a>
+        <a href="#contact" class="hover:text-white">Contact</a>
+      </nav>
+      <a href="https://wa.me/918281558598?text=Hi%20Elora%2C%20I%20would%20like%20to%20order." target="_blank" rel="noopener noreferrer" class="btn-gold">Order on WhatsApp</a>
+    </div>
+  </header>
 
-<header>
-  <h1>Elora_By_Athilu</h1>
-  <p>✨ Anti-tarnish | Traditional | Lightweight | Fancy Jewelry Crafted for You ✨</p>
-  <p>DM to order or WhatsApp: <a href="https://wa.me/918281558598" style="color: #d8bbff; text-decoration:none;">82815 58598</a></p>
-</header>
-
-<div class="container">
-  <section class="products" aria-label="Jewelry Products">
-
-    <article class="product-card">
-      <img src="https://i.imgur.com/zhlSCYV.jpg" alt="Layered Pendant Necklace" />
-      <div class="product-info">
-        <h3>Layered Pendant Necklace</h3>
-        <p>Delicate design with elegant gold and pearl accents, perfect for layering.</p>
-        <a href="https://wa.me/918281558598" target="_blank" rel="noopener" class="order-btn">Order Now</a>
+  <section class="relative overflow-hidden">
+    <div class="absolute inset-0 -z-10">
+      <div class="absolute -inset-32 blur-3xl opacity-30" style="background:
+        radial-gradient(closest-side, rgba(212,175,55,0.35), transparent 60%),
+        radial-gradient(closest-side, rgba(255,255,255,0.08), transparent 60%)"></div>
+    </div>
+    <div class="max-w-6xl mx-auto px-4 py-16 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="font-playfair text-4xl md:text-5xl leading-tight text-white">
+          Timeless Jewelry — <span style="color: var(--accent)">Anti‑tarnish, Lightweight</span>
+        </h1>
+        <p class="mt-4 text-white/70 max-w-xl">Jewelry crafted for you ✨ by @aura_by_athilu. Traditional elegance with modern comfort — pieces made to wear and love, every day.</p>
+        <div class="mt-8 flex gap-3">
+          <a href="#shop" class="btn-gold">Browse Collections</a>
+          <a href="https://wa.me/918281558598?text=Hi%20Elora%2C%20I%20want%20to%20order%20from%20your%20website." target="_blank" rel="noopener noreferrer" class="btn-outline-gold">WhatsApp Us</a>
+        </div>
+        <div class="mt-6 text-sm text-white/50">Anti-tarnish | Traditional | Lightweight | Fancy</div>
       </div>
-    </article>
-
-    <article class="product-card">
-      <img src="https://i.imgur.com/0gKAPTB.jpg" alt="Curved Bar Pendant Necklace" />
-      <div class="product-info">
-        <h3>Curved Bar Pendant Necklace</h3>
-        <p>Stylish curved design with sparkling stones and traditional flower motif.</p>
-        <a href="https://wa.me/918281558598" target="_blank" rel="noopener" class="order-btn">Order Now</a>
+      <div class="aspect-[4/3] rounded-3xl bg-white/5 shadow-sm border border-white/10 flex items-center justify-center">
+        <img src="/assets/placeholder-hero.png" alt="Featured Elora jewelry" class="h-44 w-44 object-cover rounded-full opacity-90"/>
       </div>
-    </article>
-
-    <article class="product-card">
-      <img src="https://i.imgur.com/jXQXTdy.jpg" alt="Elegant Temple Jewelry Set" />
-      <div class="product-info">
-        <h3>Elegant Temple Jewelry Set</h3>
-        <p>Intricately crafted traditional temple necklace with matching earrings.</p>
-        <a href="https://wa.me/918281558598" target="_blank" rel="noopener" class="order-btn">Order Now</a>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img src="https://i.imgur.com/NhgRm0u.jpg" alt="Royal Blue Traditional Necklace" />
-      <div class="product-info">
-        <h3>Royal Blue Traditional Necklace</h3>
-        <p>Striking blue stones set in gold-tone base, ideal for festive occasions.</p>
-        <a href="https://wa.me/918281558598" target="_blank" rel="noopener" class="order-btn">Order Now</a>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img src="https://i.imgur.com/WqT7Wcd.jpg" alt="Double Heart Pendant Necklace" />
-      <div class="product-info">
-        <h3>Double Heart Pendant Necklace</h3>
-        <p>Sweet double heart design with warm gold chain for romantic look.</p>
-        <a href="https://wa.me/918281558598" target="_blank" rel="noopener" class="order-btn">Order Now</a>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img src="https://i.imgur.com/pxTkIvA.jpg" alt="Trio Heart Necklace Set" />
-      <div class="product-info">
-        <h3>Trio Heart Necklace Set</h3>
-        <p>Minimalist three layer heart pendants, perfect for everyday elegance.</p>
-        <a href="https://wa.me/918281558598" target="_blank" rel="noopener" class="order-btn">Order Now</a>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img src="https://i.imgur.com/mahlHrh.jpg" alt="Rose Gold Pendant Necklace" />
-      <div class="product-info">
-        <h3>Rose Gold Pendant Necklace</h3>
-        <p>Classy rose gold pendant with black accent stones, timeless and chic.</p>
-        <a href="https://wa.me/918281558598" target="_blank" rel="noopener" class="order-btn">Order Now</a>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img src="https://i.imgur.com/vHvrP80.jpg" alt="Green Stone Necklace with Earrings" />
-      <div class="product-info">
-        <h3>Green Stone Necklace with Earrings</h3>
-        <p>Traditional style with elaborate gold design and vibrant green stones.</p>
-        <a href="https://wa.me/918281558598" target="_blank" rel="noopener" class="order-btn">Order Now</a>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img src="https://i.imgur.com/0wskg6t.jpg" alt="Gold Toned Hoop Earrings" />
-      <div class="product-info">
-        <h3>Stunning Gold Toned Hoop Earrings</h3>
-        <p>Elegant hoops with intricate texture, perfect to complement any outfit.</p>
-        <a href="https://wa.me/918281558598" target="_blank" rel="noopener" class="order-btn">Order Now</a>
-      </div>
-    </article>
-
-    <article class="product-card">
-      <img src="https://i.imgur.com/k44P1kO.jpg" alt="Circular Layered Pendant Necklace" />
-      <div class="product-info">
-        <h3>Circular Layered Pendant Necklace</h3>
-        <p>Layered circular design with sparkling stones creating a dazzling effect.</p>
-        <a href="https://wa.me/918281558598" target="_blank" rel="noopener" class="order-btn">Order Now</a>
-      </div>
-    </article>
-
+    </div>
   </section>
-</div>
 
-<footer>
-  © 2024 Elora_By_Athilu Jewelry | Crafted with care for you ✨
-</footer>
+  <section class="py-6">
+    <div class="max-w-6xl mx-auto px-4 grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
+      <div class="bg-white/5 text-white/80 border border-white/10 rounded-xl py-3 px-4 text-center">Anti‑tarnish finish</div>
+      <div class="bg-white/5 text-white/80 border border-white/10 rounded-xl py-3 px-4 text-center">Lightweight comfort</div>
+      <div class="bg-white/5 text-white/80 border border-white/10 rounded-xl py-3 px-4 text-center">Traditional & fancy</div>
+      <div class="bg-white/5 text-white/80 border border-white/10 rounded-xl py-3 px-4 text-center">Hand‑packed with care</div>
+    </div>
+  </section>
 
+  <section id="shop" class="py-14">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="font-playfair text-3xl mb-8 text-white">Featured Pieces</h2>
+      <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+        <div class="card">
+          <img class="aspect-square w-full object-cover bg-white/5" src="/assets/placeholder-1.png" alt="Gold-Plated Necklace" />
+          <div class="p-4">
+            <div class="font-medium text-white">Gold-Plated Necklace</div>
+            <div class="text-sm text-white/60">Anti-tarnish | Lightweight</div>
+            <a class="btn-gold w-full mt-4"
+               href="https://wa.me/918281558598?text=Hi%20Elora%2C%20I'm%20interested%20in%20the%20Gold-Plated%20Necklace.%20Please%20share%20price%20%26%20availability."
+               target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+          </div>
+        </div>
+        <div class="card">
+          <img class="aspect-square w-full object-cover bg-white/5" src="/assets/placeholder-2.png" alt="Kemp Stone Earrings" />
+          <div class="p-4">
+            <div class="font-medium text-white">Kemp Stone Earrings</div>
+            <div class="text-sm text-white/60">Traditional | Everyday</div>
+            <a class="btn-gold w-full mt-4"
+               href="https://wa.me/918281558598?text=Hi%20Elora%2C%20I'm%20interested%20in%20the%20Kemp%20Stone%20Earrings.%20Please%20share%20price%20%26%20availability."
+               target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+          </div>
+        </div>
+        <div class="card">
+          <img class="aspect-square w-full object-cover bg-white/5" src="/assets/placeholder-3.png" alt="Temple Pendant Set" />
+          <div class="p-4">
+            <div class="font-medium text-white">Temple Pendant Set</div>
+            <div class="text-sm text-white/60">Festive | Anti-tarnish</div>
+            <a class="btn-gold w-full mt-4"
+               href="https://wa.me/918281558598?text=Hi%20Elora%2C%20I'm%20interested%20in%20the%20Temple%20Pendant%20Set.%20Please%20share%20price%20%26%20availability."
+               target="_blank" rel="noopener noreferrer">Order on WhatsApp</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews" class="py-14 bg-white/5 border-t border-b border-white/10">
+    <div class="max-w-6xl mx-auto px-4">
+      <h2 class="font-playfair text-3xl mb-6 text-white">Customer Love</h2>
+      <div class="grid md:grid-cols-3 gap-4 text-sm">
+        <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-white/80">“Beautiful finish and no tarnish after weeks!”</div>
+        <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-white/80">“Lightweight yet looks premium. Perfect for daily wear.”</div>
+        <div class="bg-white/5 border border-white/10 rounded-xl p-4 text-white/80">“Great packing and quick WhatsApp ordering.”</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="py-14">
+    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+      <div>
+        <h2 class="font-playfair text-3xl mb-3 text-white">About Elora</h2>
+        <p class="text-white/70">Elora By Athilu brings together craftsmanship and comfort — jewelry that feels light, looks rich, and stays bright. Each order is carefully packed and sent with love.</p>
+      </div>
+      <div class="aspect-video rounded-2xl bg-white/5 border border-white/10"></div>
+    </div>
+  </section>
+
+  <section id="contact" class="py-14">
+    <div class="max-w-6xl mx-auto px-4 text-center">
+      <h2 class="font-playfair text-3xl text-white">Contact & Ordering</h2>
+      <p class="mt-2 text-white/70">DM on Instagram or message us on WhatsApp to order.</p>
+      <div class="mt-6 flex justify-center gap-4">
+        <a href="https://wa.me/918281558598?text=Hi%20Elora%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" rel="noopener noreferrer" class="btn-gold">💬 WhatsApp</a>
+        <a href="https://instagram.com/elora_by_athilu" target="_blank" rel="noopener noreferrer" class="btn-outline-gold">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-8 text-center text-sm text-white/50 border-t border-white/10">
+    © 2025 Elora By Athilu — Anti‑tarnish | Traditional | Lightweight | Fancy
+  </footer>
 </body>
 </html>
